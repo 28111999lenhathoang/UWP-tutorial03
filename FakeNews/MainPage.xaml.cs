@@ -1,4 +1,4 @@
-﻿using FakeNews.Model;
+using FakeNews.Model;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
@@ -24,12 +24,13 @@ namespace FakeNews
     /// </summary>
     public sealed partial class MainPage : Page
     {
+        private ObservableCollection<NewsItem> NewsItems;
         public MainPage()
         {
             this.InitializeComponent();
             NewsItems = new ObservableCollection<NewsItem>(); 
         }
-        private void ListBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        private void HumbergerButton_Click(object sender, SelectionChangedEventArgs e)
         {
             MySplitView.IsPaneOpen = !MySplitView.IsPaneOpen;
         }
@@ -38,12 +39,12 @@ namespace FakeNews
         {
             if (Financial.IsSelected)
             {
-                Newsmanager.GetNews("Financial", NewsItems);
+                NewsManager.GetNews("Financial", NewsItems);
                 TitleTextBlock.Text = "Financial";
             }
             else if (Food.IsSelected)
             {
-                Newsmanager.GetNews("Food", NewsItems);
+                NewsManager.GetNews("Food", NewsItems);
                 TitleTextBlock.Text = "Food";
             }
         }
