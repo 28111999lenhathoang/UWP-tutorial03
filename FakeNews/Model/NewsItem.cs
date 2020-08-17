@@ -18,13 +18,7 @@ namespace FakeNews.Model
     }
     public class NewsManager
     {
-        public static void GetNews(string category, ObservableCollection<NewsItem> newsItems)
-        {
-            var allItems = getNewsItems();
-            var fillteredNewsItems = allItems.Where(p => p.Category == category).ToList();
-            newsItems.Clear();
-            fillteredNewsItems.ForEach(p => newsItems.Add(p));
-        }
+
         private static List<NewsItem> getNewsItems()
         {
             var items = new List<NewsItem>();
@@ -35,7 +29,7 @@ namespace FakeNews.Model
                 Headline = "Lorem Ipsum",
                 Subhead = " doro sit amet",
                 DateLine = "Nunc tristique nec",
-                Image = "Assets/1.jpg"
+                Image = "Assets/Financial1.png"
             });
             items.Add(new NewsItem()
             {
@@ -44,7 +38,7 @@ namespace FakeNews.Model
                 Headline = "etiam ac felis viverra",
                 Subhead = " vulputate nils ac, aliquet nisi",
                 DateLine = "tortor porttitior , eu fermentum ante conque ",
-                Image = "Assets/1.jpg"
+                Image = "Assets/Financial2.png"
             });
             items.Add(new NewsItem()
             {
@@ -53,7 +47,7 @@ namespace FakeNews.Model
                 Headline = "Interger sed  turpis erat",
                 Subhead = "Sed quis hendtrerit lorem , quis interdum dolor ",
                 DateLine = " in viverra metus facilisis sed",
-                Image = "Assets/1.jpg"
+                Image = "Assets/Financial3.png"
             });
             items.Add(new NewsItem()
             {
@@ -62,7 +56,7 @@ namespace FakeNews.Model
                 Headline = "Proin sem neque ",
                 Subhead = "aliquet quis ipsum tincidunt ",
                 DateLine = "nterger eleifend ",
-                Image = "Assets/1.jpg"
+                Image = "Assets/Financial4.png"
             });
             items.Add(new NewsItem()
             {
@@ -71,7 +65,7 @@ namespace FakeNews.Model
                 Headline = "Mauris bibendum non leo vitae tempor",
                 Subhead = " In nisi tostor , eleifend sed ipsum eget",
                 DateLine = " Curabiur dictum augue vitae elementum ultrices",
-                Image = "Assets/1.jpg"
+                Image = "Assets/Financial5.png"
             });
             items.Add(new NewsItem()
             {
@@ -80,45 +74,52 @@ namespace FakeNews.Model
                 Headline = "Lorem Ipsum",
                 Subhead = " doro sit amet",
                 DateLine = "Nunc tristique nec",
-                Image = "Assets/1.jpg"
+                Image = "Assets/Financial1.png"
             });
             items.Add(new NewsItem()
             {
                 Id = 7,
-                Category = "Financial",
+                Category = "Food",
                 Headline = "etiam ac felis viverra",
                 Subhead = " vulputate nils ac, aliquet nisi",
                 DateLine = "tortor porttitior , eu fermentum ante conque ",
-                Image = "Assets/1.jpg"
+                Image = "Assets/Financial2.png"
             });
             items.Add(new NewsItem()
             {
                 Id = 8,
-                Category = "Financial",
+                Category = "Food",
                 Headline = "Interger sed  turpis erat",
                 Subhead = "Sed quis hendtrerit lorem , quis interdum dolor ",
                 DateLine = " in viverra metus facilisis sed",
-                Image = "Assets/1.jpg"
+                Image = "Assets/Financial3.png"
 
             });
             items.Add(new NewsItem()
             {
                 Id = 9,
-                Category = "Financial",
+                Category = "Food",
                 Subhead = "aliquet quis ipsum tincidunt ",
                 DateLine = "nterger eleifend ",
-                Image = "Assets/1.jpg"
+                Image = "Assets/Financial4.png"
             });
             items.Add(new NewsItem()
             {
                 Id = 10,
-                Category = "Financial",
+                Category = "Food",
                 Headline = "Mauris bibendum non leo vitae tempor",
                 Subhead = " In nisi tostor , eleifend sed ipsum eget",
                 DateLine = " Curabiur dictum augue vitae elementum ultrices",
-                Image = "1.jpg"
+                Image = "Assets/Financial5.png"
             });
             return items;
+        }
+        public static void GetNews(string category, ObservableCollection<NewsItem> newsItems)
+        {
+            var allItems = getNewsItems();
+            var fillteredNewsItems = allItems.Where(p => p.Category == category).ToList();
+            newsItems.Clear();
+            fillteredNewsItems.ForEach(p => newsItems.Add(p));
         }
     }
 }

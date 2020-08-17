@@ -28,9 +28,9 @@ namespace FakeNews
         public MainPage()
         {
             this.InitializeComponent();
-            NewsItems = new ObservableCollection<NewsItem>(); 
+            NewsItems = new ObservableCollection<NewsItem>();
         }
-        private void HumbergerButton_Click(object sender, SelectionChangedEventArgs e)
+        private void HamburgerButton_Click(object sender, RoutedEventArgs e)
         {
             MySplitView.IsPaneOpen = !MySplitView.IsPaneOpen;
         }
@@ -49,7 +49,7 @@ namespace FakeNews
             }
         }
 
-        private void Page_Loaded(object sender, RoutedEvent e)
+        private void Page_Loaded(object sender, RoutedEventArgs e)
         {
             Financial.IsSelected = true;
         }
